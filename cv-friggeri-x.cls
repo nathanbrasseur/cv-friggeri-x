@@ -1,4 +1,4 @@
-\ProvidesClass{friggeri-cv}[2016/01/01 CV class]
+\ProvidesClass{cv-friggeri-x}[2016/01/01 CV class]
 \NeedsTeXFormat{LaTeX2e}
 
 \DeclareOption{lightheader}{\def\@cv@lightheader{}}
@@ -31,11 +31,9 @@
 \RequirePackage{xcolor}
 
 \definecolor{white}{RGB}{255,255,255}
-
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
-
 \definecolor{green}{HTML}{C2E15F}
 \definecolor{orange}{HTML}{FDA333}
 \definecolor{purple}{HTML}{D3A4F9}
@@ -45,14 +43,18 @@
 \definecolor{tblue}{HTML}{55ACEE}
 \definecolor{lblue}{HTML}{0077B5}
 \definecolor{vkblue}{HTML}{A6B8D4}
+\definecolor{navy}{HTML}{8487DB}
 
-\ifdefined\@cv@lightheader
-  \colorlet{fillheader}{white}
-  \colorlet{header}{gray}
-\else 
-  \colorlet{fillheader}{gray}
-  \colorlet{header}{white}
-\fi
+\colorlet{fillheader}{gray}
+\colorlet{header}{white}
+
+%\ifdefined\@cv@lightheader
+%  \colorlet{fillheader}{white}
+%  \colorlet{header}{gray}
+%\else 
+%  \colorlet{fillheader}{gray}
+%  \colorlet{header}{white}
+%\fi
 
 \ifdefined\@cv@nocolors
   \colorlet{green}{gray}
@@ -78,8 +80,15 @@
 \RequirePackage[math-style=TeX]{unicode-math}
 
 \newfontfamily\bodyfont[]{Roboto}
-\newfontfamily\thinfont[]{Roboto Thin}
-\newfontfamily\headingfont[]{Roboto Condensed Bold}
+%\newfontfamily\thinfont[]{Roboto Thin}
+%\newfontfamily\headingfont[]{Roboto Condensed Bold}
+
+\newfontfamily\headingfont[]{Montserrat Medium}
+\newfontfamily\thinfont[]{Montserrat Light}
+%\newfontfamily\headingfont[]{Tahoma}
+%\newfontfamily\segoesemifont[]{Segoe UI Light}
+%\newfontfamily\calibrifont[]{Calibri}
+\newfontfamily\boldfont[]{Montserrat}
 
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont[Mapping=tex-text, Color=textcolor]{Roboto Light}
@@ -100,38 +109,63 @@
 
 \newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
+    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=5cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
-      {\thinfont #1}{\bodyfont  #2}
+      {\thinfont #1} {\bodyfont  #2 }
     };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
       \thinfont #3%
     };
   \end{tikzpicture}
-  \vspace{2.5cm}
-  \vspace{-2\parskip}
+  \vspace{2cm}
+  \vspace{5\parskip}
 }
 
+\newcommand{\userpic}[1]{
+  \let\oldsection\section
+\begin{tikzpicture}
+\begin{scope}
+\clip [rounded corners=2.1cm] (0,0) rectangle coordinate (centerpoint) (4.2,4.2cm); 
+\node [inner sep=0pt] at (centerpoint) {\includegraphics[width=4.2cm]{#1}};
+\end{scope}
+\end{tikzpicture}
+}
 
 %%%%%%%%%%%%%
 % Structure %
 %%%%%%%%%%%%%
 \RequirePackage{parskip}
 
+%\newcounter{colorCounter}
+%\def\@sectioncolor#1#2#3{%
+%  {%
+%    \color{%
+%      \ifcase\value{colorCounter}%
+%        blue\or%
+%        red\or%
+%        orange\or%
+%        green\or%
+%        purple\or%
+%        brown\else%
+%        headercolor\fi%
+%    } #1#2#3%
+%  }%
+%  \stepcounter{colorCounter}%
+%}
 \newcounter{colorCounter}
 \def\@sectioncolor#1#2#3{%
   {%
     \color{%
       \ifcase\value{colorCounter}%
-        blue\or%
-        red\or%
-        orange\or%
-        green\or%
-        purple\or%
-        brown\else%
-        headercolor\fi%
+        gray\or%
+        gray\or%
+        gray\or%
+        gray\or%
+        gray\or%
+        gray\else%
+        gray\fi%
     } #1#2#3%
   }%
   \stepcounter{colorCounter}%
@@ -140,10 +174,11 @@
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {%
-    \LARGE\headingfont\color{headercolor}%
+    \Large\headingfont\color{headercolor}%
     \@sectioncolor #1%
+      \vspace{\parsep}%
   }
-  \par\vspace{\parskip}
+  \par\vspace{.25\parskip}%
 }
 
 \renewcommand{\subsection}[1]{
@@ -177,22 +212,69 @@
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \ifafourpaper
-  \newcommand{\entry}[4]{%
-  \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
-  \textbf{#2}%
-  \hfill%
-  {, \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
-  #4\vspace{\parsep}%
-  }\\}
+	  \newcommand{\entry}[4]{%
+	  \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
+	  \textbf{#2}%
+	  \hfill%
+	  {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	  #4\vspace{\parsep}%
+	  }\\}
 \else
-  \newcommand{\entry}[4]{%
-    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
+	  \newcommand{\entry}[4]{%
+	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
+	    \textbf{#2}%
+	    \hfill%
+	    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	    #4\vspace{\parsep}%
+	    }\\}
+\fi
+
+\ifafourpaper
+	\newcommand{\educationentry}[5]{%
+	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
+	    \textbf{#2}%
+	    \hfill%
+	    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	    #4\vspace{.5\parsep}\\%
+	    #5\vspace{\parsep}%
+	    }\\
+	}
+\else
+	\newcommand{\educationentry}[5]{%
+	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
+	    \textbf{#2}%
+	    \hfill%
+	    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	    #4\vspace{.5\parsep}\\%
+	    #5\vspace{\parsep}%
+	    }\\
+	}
+\fi
+
+\newcommand{\trainingentry}[3]{%
+    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
     \textbf{#2}%
     \hfill%
-    {, \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
-    #4\vspace{\parsep}%
-    }\\}
-\fi
+    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+    }\\
+}
+
+\newcommand{\paragraphsection}[2]{%
+  {\large\boldfont\color{headercolor}{#1}}
+%  \normalsize\color{headercolor}{#2}
+{\normalsize #2}
+  \par\vspace{.05\parskip}%
+}%
+
+\usepackage{scrextend}
+\newcommand{\projectentry}[2]{%
+{\large\boldfont\color{headercolor}{#1}}
+  \begin{addmargin}[2em]{0em}
+  \color{headercolor}{#2}%
+  \par\vspace{.95\parskip}%
+  \end{addmargin}
+}%
+
 
 %%%%%%%%%%%%%%
 % Side block %
@@ -201,12 +283,33 @@
 \RequirePackage[absolute,overlay]{textpos}
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
+
 \newenvironment{aside}{%
   \let\oldsection\section
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+      \vspace{\parsep}%
   }
-  \begin{textblock}{3.6}(1.5, 4.33)
+  \begin{textblock}{4.5}(1.0, 2.5)
+  \begin{flushright}
+  \obeycr
+}{%
+  \restorecr
+  \end{flushright}
+  \end{textblock}
+  \let\section\oldsection
+}
+
+\newenvironment{asidebis}{%
+  %\let\oldsection\section
+  \renewcommand{\section}[1]{
+    \par\vspace{\baselineskip}
+    {
+    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+      \vspace{\parsep}%
+    }
+  }
+  \begin{textblock}{4.5}(1.0, 1.0)
   \begin{flushright}
   \obeycr
 }{%
@@ -350,8 +453,6 @@
   \sort[direction=descending]{\field{month}}
 }
 
-
-
 %%%%%%%%%%%%%%%%
 % Other tweaks %
 %%%%%%%%%%%%%%%%
@@ -375,24 +476,9 @@
   \textcolor{gray}{\includegraphics[height=1em]{resources/pin}}%
 }
 
-% Add fb logo
-\newcommand*{\flogo}{%
-  \textcolor{fblue}{\includegraphics[height=1em]{resources/f_logo}}%
-}
-
-% Add twitter logo
-\newcommand*{\tlogo}{%
-  \textcolor{tblue}{\includegraphics[height=1em]{resources/twitter_logo}}%
-}
-
 % Add linkedin logo
 \newcommand*{\llogo}{%
-  \textcolor{lblue}{\includegraphics[height=1em]{resources/linkedin_logo}}%
-}
-
-% Add vk logo
-\newcommand*{\vklogo}{%
-  \textcolor{vkblue}{\includegraphics[height=1em]{resources/vk_logo}}%
+  \textcolor{lblue}{\hspace*{0.1cm}\includegraphics[height=1em]{resources/linkedin_logo}}%
 }
 
 % A fix for \href{}{} colors not working with fontspec
