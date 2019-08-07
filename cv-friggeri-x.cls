@@ -127,8 +127,8 @@
   \let\oldsection\section
 \begin{tikzpicture}
 \begin{scope}
-\clip [rounded corners=2.1cm] (0,0) rectangle coordinate (centerpoint) (4.2,4.2cm); 
-\node [inner sep=0pt] at (centerpoint) {\includegraphics[width=4.2cm]{#1}};
+\clip [rounded corners=2.2cm] (0,0) rectangle coordinate (centerpoint) (4.4,4.4cm); 
+\node [inner sep=0pt] at (centerpoint) {\includegraphics[width=4.4cm]{#1}};
 \end{scope}
 \end{tikzpicture}
 }
@@ -154,31 +154,38 @@
 %  }%
 %  \stepcounter{colorCounter}%
 %}
-\newcounter{colorCounter}
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{%
-      \ifcase\value{colorCounter}%
-        gray\or%
-        gray\or%
-        gray\or%
-        gray\or%
-        gray\or%
-        gray\else%
-        gray\fi%
-    } #1#2#3%
-  }%
-  \stepcounter{colorCounter}%
-}
+%\newcounter{colorCounter}
+%\def\@sectioncolor#1{%
+%  {%
+%    \color{%
+%      \ifcase\value{colorCounter}%
+%%        gray\or%
+%%        gray\or%
+%%        gray\or%
+%%        gray\or%
+%%        gray\or%
+%%        gray\else%
+%%        gray\fi%
+%        blue\or%
+%        red\or%
+%        orange\or%
+%        green\or%
+%        purple\or%
+%        brown\else%
+%        headercolor\fi%
+%    } #1%
+%  }%
+%  \stepcounter{colorCounter}%
+%}
 
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {%
     \Large\headingfont\color{headercolor}%
-    \@sectioncolor #1%
+    \color{navy} #1%
       \vspace{\parsep}%
   }
-  \par\vspace{.25\parskip}%
+  \par\vspace{.15\parskip}%
 }
 
 \renewcommand{\subsection}[1]{
@@ -216,7 +223,7 @@
 	  \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
 	  \textbf{#2}%
 	  \hfill%
-	  {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	  {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
 	  #4\vspace{\parsep}%
 	  }\\}
 \else
@@ -224,7 +231,7 @@
 	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
 	    \textbf{#2}%
 	    \hfill%
-	    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
 	    #4\vspace{\parsep}%
 	    }\\}
 \fi
@@ -234,7 +241,7 @@
 	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
 	    \textbf{#2}%
 	    \hfill%
-	    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
 	    #4\vspace{.5\parsep}\\%
 	    #5\vspace{\parsep}%
 	    }\\
@@ -244,7 +251,7 @@
 	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
 	    \textbf{#2}%
 	    \hfill%
-	    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
 	    #4\vspace{.5\parsep}\\%
 	    #5\vspace{\parsep}%
 	    }\\
@@ -255,23 +262,22 @@
     \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
     \textbf{#2}%
     \hfill%
-    {  \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
     }\\
 }
 
 \newcommand{\paragraphsection}[2]{%
-  {\large\boldfont\color{headercolor}{#1}}
-%  \normalsize\color{headercolor}{#2}
-{\normalsize #2}
+  {\textbf{#1}}{\hspace*{0.2cm}}{\normalsize #2}
   \par\vspace{.05\parskip}%
 }%
 
 \usepackage{scrextend}
 \newcommand{\projectentry}[2]{%
-{\large\boldfont\color{headercolor}{#1}}
+%{\large\boldfont\color{headercolor}{#1}}
+{\textbf{#1}}
   \begin{addmargin}[2em]{0em}
   \color{headercolor}{#2}%
-  \par\vspace{.95\parskip}%
+  \par\vspace{.45\parskip}%
   \end{addmargin}
 }%
 
@@ -287,7 +293,7 @@
 \newenvironment{aside}{%
   \let\oldsection\section
   \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+    \par\vspace{\baselineskip}{\large\headingfont\color{headercolor} ##1}
       \vspace{\parsep}%
   }
   \begin{textblock}{4.5}(1.0, 2.5)
@@ -305,7 +311,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}
     {
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+    \par\vspace{\baselineskip}{\large\headingfont\color{headercolor} ##1}
       \vspace{\parsep}%
     }
   }
