@@ -80,8 +80,11 @@
 \RequirePackage[math-style=TeX]{unicode-math}
 
 \newfontfamily\bodyfont[]{Roboto}
-%\newfontfamily\thinfont[]{Roboto Thin}
-%\newfontfamily\headingfont[]{Roboto Condensed Bold}
+\newfontfamily\headerthinfont[]{Roboto Thin}
+\newfontfamily\headerboldfont[]{Roboto Light}
+%\newfontfamily\headerthinfont[]{Roboto Thin}
+%\newfontfamily\headerboldfont[]{Roboto}
+% \newfontfamily\headerboldfont[]{Roboto Condensed Bold}
 
 \newfontfamily\headingfont[]{Montserrat Medium}
 \newfontfamily\thinfont[]{Montserrat Light}
@@ -112,11 +115,11 @@
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=5cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
-      {\thinfont #1} {\bodyfont  #2 }
+      {\hspace*{1cm}}{\headerthinfont #1}{\hspace*{0.35cm}}{\headerboldfont  #2 }
     };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
-      \thinfont #3%
+      {\hspace*{1cm}}\thinfont #3%
     };
   \end{tikzpicture}
   \vspace{2cm}
@@ -242,7 +245,7 @@
 	    \textbf{#2}%
 	    \hfill%
 	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
-	    #4\vspace{.5\parsep}\\%
+	    #4\vspace{.3\parsep}\\%
 	    #5\vspace{\parsep}%
 	    }\\
 	}
@@ -252,7 +255,7 @@
 	    \textbf{#2}%
 	    \hfill%
 	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
-	    #4\vspace{.5\parsep}\\%
+	    #4\vspace{.3\parsep}\\%
 	    #5\vspace{\parsep}%
 	    }\\
 	}
@@ -484,7 +487,7 @@
 
 % Add linkedin logo
 \newcommand*{\llogo}{%
-  \textcolor{lblue}{\hspace*{0.1cm}\includegraphics[height=1em]{resources/linkedin_logo}}%
+  \textcolor{lblue}{\hspace*{0.18cm}\includegraphics[height=1em]{resources/linkedin_logo}}%
 }
 
 % A fix for \href{}{} colors not working with fontspec
