@@ -23,23 +23,22 @@
 % if used, needs to be compiled with biber rather than bibtex.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%
 \documentclass[a4paper]{cv-friggeri-x}
 % Add `a4paper` to set a4 paper size
 % Add `nocolors` to remove colors from the document
 % Add `lightheader` to change the dark background of the header to white
-
+%
 \usepackage{marvosym} % needed to print glyphs for email, cell phone etc.
-
-
+%
 \begin{document}
-
+%
 \header{Nathan}{Brasseur}{Development Team Leader} % Your name and current job title/field
-
+%
 %----------------------------------------------------------------------------------------
 %	SIDEBAR SECTION
 %----------------------------------------------------------------------------------------
-
+%
 \begin{aside} % In the aside, each new line forces a line break
 \userpic{me.jpg}
 %\noindent\rule{3.8cm}{0.4pt}\color{navy}
@@ -63,69 +62,31 @@ Driving licence B
 %\href{http://www.smith.com}{http://www.smith.com}
 \section{languages}
 French -- mother tongue
-English -- B2
-Dutch -- notions
-~
-\section{programming}
-C\#, PHP, Java, C, C++
-CSS3 \& HTML5,
-JavaScript, XML, JSON
-XAML, Office Open XML
-PowerShell, SQL
-LaTeX
+English -- CEFR B2 level
+%Dutch -- notions
 \end{aside}
-
-
+%
 \section{Career objectives}
-I aspire for a challenging position in a professional organization as C\# expert where I could enhance my skills and strengthen them in conjunction with organization’s goals.
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
-
-\section{Education}
-
-\begin{entrylist}
-
-%------------------------------------------------
-
-\educationentry
-{2008--2011}
-{Bachelor’s degree {\normalfont of Business Computing}}
-{Mons, Belgium}
-{Haute Ecole Louvain en Hainaut}
-{\emph{Graduated with great distinction}}
-
-%------------------------------------------------
-
-\educationentry
-{2005--2008}
-{University bachelor's degree {\normalfont of Psychology}}
-{Mons, Belgium}
-{Haute Ecole Louvain en Hainaut}
-{\emph{Aborted}}
-
-%------------------------------------------------
-
-\end{entrylist}
-
+I'm ready to bring to your organization my 4+ years of experience as development team leader and my 8+ years of experience as C\# developer. 
+%
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
-
+%
+\section{ }
 \section{Experience}
-
+%
 %------------------------------------------------
-
+%
 \begin{entrylist}
 \entry
 {2015--Now}
 {EONIX S.A.}
-{Mons, Belgium}
+{Mons-Liège, Belgium}
 {\emph{Development Team Leader}\\
-Lead developer, code rewiewer, internal procedure writer (ISO 9001 and 27001), HR contact person (recruitment, holidays requests, internal issues, etc), project manager, management meeting participant, etc}
+Lead developer, unit manager, project manager, code rewiewer, internal procedure writer (ISO 9001 and 27001), HR contact person (recruitment, holidays requests, internal issues, etc), meeting facilitator, etc}
 \end{entrylist}
-
+%
 \begin{entrylist}
 \entry
 {2011 - 2015}
@@ -134,7 +95,7 @@ Lead developer, code rewiewer, internal procedure writer (ISO 9001 and 27001), H
 {\emph{C\# Software developer}\\
 Analyst, developer, supervisor of unit test, code reviewer, trainees and new employees supervision, peer-programming, teaching infrastructure and practices, etc}
 \end{entrylist}
-
+%
 \begin{entrylist}
 \entry
 {2011 - 2011}
@@ -142,74 +103,109 @@ Analyst, developer, supervisor of unit test, code reviewer, trainees and new emp
 {Mons, Belgium}
 {\emph{C\# Trainee}}
 \end{entrylist}
-
+%
+%----------------------------------------------------------------------------------------
+%	SOFT SKILLS SECTION
+%----------------------------------------------------------------------------------------
+%
+\section{ }
+\section{Soft skills}
+%
+\paragraphsection{Assertive}{good writing and oral skills in French and English, good communication skills with customers and teammates}
+\paragraphsection {Reliable}{responsible and enthusiastic, problem solver, curious, quick learner, hard worker, craving for knowledge}
+\paragraphsection {Emotional intelligence}{exigent with himself and his teammates to provide high-quality work, driven by excellence, helps and asks easily for help, shares information easily}
+\paragraphsection {Emotional stability}{focused on goals, able to stay calm and rational in even difficult situations}
+%
+\section{ }
+\section{Achievements}
+%
+\begin{entrylist}
+%
+\educationentry
+{2014}
+{Microsoft Certification}
+{Pearson VUE}
+{Software Development Fundamentals}
+{\emph{Passed the 98-361 Microsoft MTA certification}}
+%
+\educationentry
+{2016--2018}
+{Site manager}
+{Liège}
+{Office management, team recruitment, supplier contact}
+{\emph{ }}
+\end{entrylist}
+%
 %----------------------------------------------------------------------------------------
 %	PROJECTS SECTION
 %----------------------------------------------------------------------------------------
-
+\section{ }
+\section{ }
+\section{ }
+\section{ }
+\section{ }
 \section{Projects and duties}
-
+%
+\projectentry {ASP.NET MVC web}{Platform which centralizes 25 years of schools, teachers and students’ data, allows school and cities organizations to manage student, subsidies, teachers and contracts, generates official documents for the FWB, manages classes and student subscriptions within schools, manages the different layers of management, etc. \\
+Currently in production and used by around 1500 schools and organizations.}
+%
+\projectentry {ASP.NET MVC web}{Development of a centralized platform for the provision and management of vocational training in the field of education. Managers can add structured training, taking into account calendar management, trainers, associated documents, themes or training locations. Users can register for selected or mandatory courses. \\
+ The platform currently covers 600 training courses offered for more than 60,000 participants.}
+%
+\projectentry {ASP.NET MVC web}{Complete document management platform (GED) allowing users to manage official documents via defined templates as well as documents proposed by all participants. \\
+The specificities are the ergonomic design of the solution as well as the management by tree structure of documents, their classification and management by keywords.}
+%
 \projectentry {ASP.NET web}{In charge of the finalization and improvement of an ASP.NET web platform which manages Active Directory users and groups, disk and print quotas, etc. and worked in collaboration with different partners such as ComputerLand, Priminfo and the SPW.\\ 
 The project is still deployed and working in almost 3300 schools in Wallonia.}
-
-\projectentry {Mobile development}{iOS and Android applications for geolocation purpose using Java or Xamarin frameworks.}
-
-\projectentry {Stock management \& LIMS}{WinForms desktop applications that manage stocks and products, laboratories and permissions, orders and receipts, etc. from analysis to production version.}
-
-\projectentry {ASP.NET MVC web}{Platform which centralizes 25 years of schools, teachers and students’ data, allows school and cities organizations to manage student, subsidies, teachers and contracts, generates official documents for the Wallonia-Brussel Federation (FWB), manages classes and student subscriptions within schools, manages the different layers of management, etc. \\
-Currently in production and used by around 1500 schools and organizations.}
-
+%
+\projectentry {Mobile development}{iOS and Android geolocation applications using Java or Xamarin frameworks.}
+%
+\projectentry {WinForms desktop applications}{Development of LIMS applications that manage stocks and products, laboratories and permissions, orders and receipts, etc. from analysis to production version.}
+%
 %----------------------------------------------------------------------------------------
 %	SIDEBAR SECTION SECTION II
 %----------------------------------------------------------------------------------------
-
+%
 \begin{asidebis}
+\section{programming}
+C\#, PHP, 
+CSS3 \& HTML5, 
+JavaScript, 
+Java, C, C++,
+XML, JSON
+XAML, Office Open XML
+PowerShell, SQL
+LaTeX
+%
 \section{technologies}
 ASP.NET MVC, REST
-WinForms, WPF, SOAP
 NUnit, TeamCity
+Office 365, Active Directory
+IIS, Apache
+WinForms, WPF, SOAP
 iOS, Android
 Xamarin, Windows Service
+MS SQL Server, MySQL
 MS Server, MS Sharepoint
 MS Exchange,
-Office 365, Active Directory
-IIS, MS SQL Server
-MySQL, Sybase
-Apache
 %
 \section{tools}
 Visual Studio \& ReSharper
-Xamarin Studio, PHP Storm
-Eclipse, IntelliJ, NetBeans
 GitKraken - SourceTree \& Git
 SQL Management Studio
+Xamarin Studio, PHP Storm
+Eclipse, IntelliJ, NetBeans
 Sharepoint Designer
 RDCM, Balsamiq
 TeXworks, WAMP
 InstallShield
 \end{asidebis}
-
-\projectentry {ASP.NET MVC web}{Development of a centralized platform for the provision and management of vocational training in the field of education. Managers can add structured training, taking into account calendar management, trainers, associated documents, themes or training locations. Users can register for selected or mandatory courses. \\
- The platform currently covers 600 training courses offered for more than 60,000 participants.}
-
-\projectentry {ASP.NET MVC web}{Complete document management platform (GED) allowing users to manage official documents via defined templates as well as documents proposed by all participants. \\
-The specificities are the ergonomic design of the solution as well as the management by tree structure of documents, their classification and management by keywords.}
-
-%----------------------------------------------------------------------------------------
-%	PROJECTS SECTION 2
-%----------------------------------------------------------------------------------------
-
-
-%\projectentry {Lead developer}{Analyst, developer, supervisor of unit test, code reviewer, etc}
 %
-%\projectentry {Employees and trainees supervision}{Supervisor of almost 20 trainees over the years and developers (almost 15 new employees) in the company : introduction, follow-up, teaching infrastructure and practices, training, peer-programming and code review}
-%
-%\projectentry {Team manager}{Internal procedure writer, HR contact person (recruitment, holidays requests, internal issues, etc)}
-
 %----------------------------------------------------------------------------------------
 %	TRAININGS SECTION
 %----------------------------------------------------------------------------------------
-\section{Trainings}
+%
+\section{Education and trainings}
 \begin{entrylist}
 %
 \trainingentry
@@ -227,49 +223,40 @@ The specificities are the ergonomic design of the solution as well as the manage
 %
 \begin{entrylist}
 \trainingentry
-{2012-2014}
+{2012--2014}
 {Office 365 training sessions}
 {Microsoft Belgium}
 \end{entrylist}
-
-%----------------------------------------------------------------------------------------
-%	ACHIEVEMENTS SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Achievements}
-
 \begin{entrylist}
+%------------------------------------------------
+\educationentry
+{2008--2011}
+{Bachelor’s degree {\normalfont of Business Computing}}
+{Mons, Belgium}
+{Haute Ecole Louvain en Hainaut}
+{\emph{Graduated with great distinction}}
+%
+%------------------------------------------------
 %
 \educationentry
-{2014}
-{Microsoft Certification}
-{Pearson VUE}
-{Software Development Fundamentals}
-{\emph{Passed the 98-361 Microsoft MTA certification}}
-\end{entrylist}
-
-%----------------------------------------------------------------------------------------
-%	SOFT SKILLS SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Soft skills}
+{2005--2008}
+{University bachelor's degree {\normalfont of Psychology}}
+{Mons, Belgium}
+{Haute Ecole Louvain en Hainaut}
+{\emph{Unfinished}}
 %
-\paragraphsection{assertive}{good writing and oral skills in French and English, good communication skills with customers and teammates}
-\paragraphsection {teamwork}{highly exigent with himself and his teammates to provide high-quality work, I will easily help and ask for help, adept of win-win situation, shares information easily}
-\paragraphsection {focused}{able to stay calm and rational in even difficult situations}
-\paragraphsection {ambitious}{focused on goals, hard worker, responsible and motivated, driven by excellence}
-\paragraphsection {autodidact}{can learn fast and by his own, passionnate, craving for knowledge}
-%\paragraphsection {perfectionnist}{ knows what he wants and able to deliver quality, meticulous and critical mind}
-
+%------------------------------------------------
+%
+\end{entrylist}
+%
 %----------------------------------------------------------------------------------------
 %	INTERESTS SECTION
 %----------------------------------------------------------------------------------------
-
-\section{Interests}
 %
-\paragraphsection{professional}{web design, software design, everything about object oriented programming language, design patterns, best code practices}
-\paragraphsection{personal}{photography, running and cycling, TV shows and cinema, cards and board games, new technologies}
-
+\section{Personal interests}
+%
+%\paragraphsection{professional}{web design, software design, everything about object oriented programming language, design patterns, best code practices}
+%\paragraphsection{ }{photography, running and cycling, TV shows and cinema, cards and board games, new technologies}
+Photography, running and cycling, TV shows and cinema, cards and board games, new technologies
 %----------------------------------------------------------------------------------------
-
 \end{document}

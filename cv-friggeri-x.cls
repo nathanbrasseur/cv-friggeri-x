@@ -115,11 +115,11 @@
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=5cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
-      {\hspace*{1cm}}{\headerthinfont #1}{\hspace*{0.35cm}}{\headerboldfont  #2 }
+      {\hspace*{2cm}}{\headerthinfont #1}{\hspace*{0.35cm}}{\headerboldfont  #2 }
     };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
-      {\hspace*{1cm}}\thinfont #3%
+      {\hspace*{2cm}}\thinfont #3%
     };
   \end{tikzpicture}
   \vspace{2cm}
@@ -223,7 +223,7 @@
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \ifafourpaper
 	  \newcommand{\entry}[4]{%
-	  \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
+	  \parbox[t]{2cm}{#1}&\parbox[t]{11.1cm}{%
 	  \textbf{#2}%
 	  \hfill%
 	  {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
@@ -231,7 +231,7 @@
 	  }\\}
 \else
 	  \newcommand{\entry}[4]{%
-	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
+	    \parbox[t]{2cm}{#1}&\parbox[t]{11.6cm}{%
 	    \textbf{#2}%
 	    \hfill%
 	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
@@ -241,7 +241,7 @@
 
 \ifafourpaper
 	\newcommand{\educationentry}[5]{%
-	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
+	    \parbox[t]{2cm}{#1}&\parbox[t]{11.1cm}{%
 	    \textbf{#2}%
 	    \hfill%
 	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
@@ -251,7 +251,7 @@
 	}
 \else
 	\newcommand{\educationentry}[5]{%
-	    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
+	    \parbox[t]{2cm}{#1}&\parbox[t]{11.6cm}{%
 	    \textbf{#2}%
 	    \hfill%
 	    {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
@@ -262,7 +262,8 @@
 \fi
 
 \newcommand{\trainingentry}[3]{%
-    \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
+%{\hfill#1}
+    \parbox[t]{2cm}{#1}&\parbox[t]{11.1cm}{%
     \textbf{#2}%
     \hfill%
     {  \normalsize\addfontfeature{Color=lightgray} #3}\\%
@@ -278,7 +279,7 @@
 \newcommand{\projectentry}[2]{%
 %{\large\boldfont\color{headercolor}{#1}}
 {\textbf{#1}}
-  \begin{addmargin}[2em]{0em}
+  \begin{addmargin}[0.2em]{0em}
   \color{headercolor}{#2}%
   \par\vspace{.45\parskip}%
   \end{addmargin}
